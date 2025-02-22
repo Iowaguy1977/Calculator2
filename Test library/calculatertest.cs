@@ -28,6 +28,21 @@ namespace Test_library
             Assert.Equal(expected, Actual);
         }
         [Theory]
+        [InlineData(4, 4, 0)]
+        [InlineData(5, 5, 0)]
+        public void Subtraction_simpleValueShouldCalculate(double x, double y, double Expected)
+        {
+            //Arrange
+            double expected = Expected;
+
+
+            //Act
+            Double Actual = Operation.Subtract(x, y);
+
+            //Assert
+            Assert.Equal(expected, Actual);
+        }
+        [Theory]
         [InlineData(4, 4, 18)]
         [InlineData(5, 5, 25)]
         public void Multiply_SimpleValuesShouldCalculate(double x, double y, double Expected)
