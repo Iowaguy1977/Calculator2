@@ -58,5 +58,20 @@ namespace Test_library
 
 
         }
+        [Theory]
+        [InlineData(4, 4, 1)]
+        [InlineData(5, 5, 10)]
+        public void Divide_simpleValueShouldCalculate(double x, double y, double Expected)
+        {
+            //Arrange
+            double expected = Expected;
+
+
+            //Act
+            Double Actual = Operation.Divide(x, y);
+
+            //Assert
+            Assert.Equal(expected, Actual);
+        }
     }
 }
