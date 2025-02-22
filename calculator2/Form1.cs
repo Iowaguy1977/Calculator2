@@ -83,10 +83,14 @@ namespace calculator2
             }
 
         }
-        public void OperatoonClick(object sender, EventArgs e)
+        public void OperationClick(object sender, EventArgs e)
         {
-           
-            
+            if (_problemSolved)
+            {
+               _stepKeeper.CalculationStep = StepKeeper.Step.FirstStep;
+                number=_CalculationState.ReturnSum;
+                _problemSolved = false;
+            }            
             
                 if (_stepKeeper.CalculationStep == StepKeeper.Step.ThirdStep)
                 {
@@ -195,8 +199,9 @@ namespace calculator2
                        _CalculationState.SetProblem();
                        problem.Add(Convert.ToString(_CalculationState.FullProblem));
                 }
-                       _problemSolved = true;
+                       
             }
+            _problemSolved = true;
         }
         public void BackSpaceClick(object sender, EventArgs e)
         {
